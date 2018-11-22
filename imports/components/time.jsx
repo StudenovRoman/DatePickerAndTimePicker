@@ -6,13 +6,13 @@ import {
   disabledStartHours, disabledStartMinutes, disabledStartSeconds,
   disabledEndHours, disabledEndMinutes, disabledEndSeconds
 } from './helpers/disabledTime';
-import { checkStartSeconds, checkEndSeconds } from './helpers/checkTime';
+import { checkStart, checkEnd } from './helpers/checkTime';
 
 const TimeRange = ({ onChange, value: { start, end } }) => (
   <section>
     <TimePicker
       value={start}
-      onChange={time => checkStartSeconds(onChange, time, end)}
+      onChange={time => checkStart(onChange, time, end)}
       disabledHours={() => disabledStartHours(end)}
       disabledMinutes={(h) => disabledStartMinutes(end, h)}
       disabledSeconds={(h, m) => disabledStartSeconds(end, h, m)}
@@ -23,7 +23,7 @@ const TimeRange = ({ onChange, value: { start, end } }) => (
     />
     <TimePicker
       value={end}
-      onChange={time => checkEndSeconds(onChange, time, start)}
+      onChange={time => checkEnd(onChange, time, start)}
       disabledHours={() => disabledEndHours(start)}
       disabledMinutes={(h) => disabledEndMinutes(start, h)}
       disabledSeconds={(h, m) => disabledEndSeconds(start, h, m)}
