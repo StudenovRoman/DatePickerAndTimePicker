@@ -1,5 +1,5 @@
 import React from 'react';
-import AutoForm from 'uniforms-antd/AutoForm';
+import AutoForm from 'uniforms/AutoForm';
 
 import { schema } from '../lib/schema';
 import { DatePickerConnect } from './date';
