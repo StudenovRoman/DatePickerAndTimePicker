@@ -6,7 +6,7 @@ const range = (start, end) => {
     result.push(i);
   }
   return result;
-}
+};
 
 export const disabledStartHours = (end) => {
   if (end) {
@@ -15,28 +15,28 @@ export const disabledStartHours = (end) => {
     return array;
   }
   return [];
-}
+};
 
 export const disabledStartMinutes = (end, hour) => {
   const h = moment(end).hour();
-  if (h === hour) {
+  if (h === hour && end) {
     const m = moment(end).minute();
     const array = range(0, 60).splice(m + 1, 60);
     return array;
   }
   return [];
-}
+};
 
 export const disabledStartSeconds = (end, hour, minute) => {
   const h = moment(end).hour();
   const m = moment(end).minute();
-  if (h === hour && m === minute) {
+  if (h === hour && m === minute && end) {
     const s = moment(end).second();
     const array = range(0, 60).splice(s, 60);
     return array;
   }
   return [];
-}
+};
 
 export const disabledEndHours = (start) => {
   if (start) {
@@ -45,25 +45,25 @@ export const disabledEndHours = (start) => {
     return array;
   }
   return [];
-}
+};
 
 export const disabledEndMinutes = (start, hour) => {
   const h = moment(start).hour();
-  if (h === hour) {
+  if (h === hour && start) {
     const m = moment(start).minute();
     const array = range(0, 60).splice(0, m);
     return array;
   }
   return [];
-}
+};
 
 export const disabledEndSeconds = (start, hour, minute) => {
   const h = moment(start).hour();
   const m = moment(start).minute();
-  if (h === hour && m === minute) {
+  if (h === hour && m === minute && start) {
     const s = moment(start).second();
     const array = range(0, 60).splice(0, s + 1);
     return array;
   }
   return [];
-}
+};

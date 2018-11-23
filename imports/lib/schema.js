@@ -1,16 +1,22 @@
 import SimpleSchema from 'simpl-schema';
-import moment from 'moment';
 
 export const schema = new SimpleSchema({
   datePicker: {
-    type: Date,
-    defaultValue: [moment('2018-11-01'), moment('2018-11-30')]
+    type: Object
+  },
+  "datePicker.start": {
+    type: Date
+  },
+  "datePicker.end": {
+    type: Date
   },
   timePicker: {
-    type: Date,
-    defaultValue: {
-      start: moment('000000', 'hmmss'),
-      end: moment('235959', 'hmmss')
-    }
+    type: Object
+  },
+  "timePicker.start": {
+    type: Date
+  },
+  "timePicker.end": {
+    type: Date
   }
 });

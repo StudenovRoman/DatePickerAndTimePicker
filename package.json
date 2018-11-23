@@ -10,10 +10,12 @@
     "@babel/runtime": "7.1.2",
     "antd": "3.10.1",
     "moment": "2.22.2",
-    "react": "16.5.2",
-    "react-dom": "16.5.2",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
     "simpl-schema": "1.5.3",
-    "uniforms": "1.27.0"
+    "uniforms": "1.27.0",
+    "uniforms-antd": "^1.27.0",
+    "uniforms-unstyled": "^1.27.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-classes": "7.1.0",
