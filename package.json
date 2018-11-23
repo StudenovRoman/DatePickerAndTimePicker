@@ -14,8 +14,7 @@
     "react-dom": "16.6.3",
     "simpl-schema": "1.5.3",
     "uniforms": "1.27.0",
-    "uniforms-antd": "^1.27.0",
-    "uniforms-unstyled": "^1.27.0"
+    "uniforms-antd": "1.27.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-classes": "7.1.0",
