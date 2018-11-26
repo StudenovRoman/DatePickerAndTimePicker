@@ -18,5 +18,12 @@ export const schema = new SimpleSchema({
   },
   "timePicker.end": {
     type: Date
+  },
+  repeater: {
+    type: Array,
+    optional: true
+  },
+  "repeater.$": {
+    type: String
   }
 });

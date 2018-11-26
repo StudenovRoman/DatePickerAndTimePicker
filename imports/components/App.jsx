@@ -6,6 +6,7 @@ import ErrorsField from 'uniforms-antd/ErrorsField';
 import { schema } from '../lib/schema';
 import DateRange from './DateRange';
 import TimeRange from './TimeRange';
+import Repeater from './Repeater';
 
 import 'antd/dist/antd.css';
 
@@ -36,8 +37,19 @@ class App extends React.Component {
         <section className="section">
           <TimeRange name="timePicker" />
         </section>
-        <ErrorsField />
-        <SubmitField />  
+        <section>
+          <Repeater
+            name="repeater"
+            list={[
+              'List item number one',
+              'List item number two',
+              'List item number three',
+              'List item number four',
+            ]}
+          />
+        </section>
+        <ErrorsField style={{ margin: 2 }} />
+        <SubmitField style={{ margin: 2 }} />  
       </AutoForm>
     );
   }
