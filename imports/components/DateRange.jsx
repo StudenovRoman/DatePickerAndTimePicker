@@ -7,12 +7,7 @@ import { checkDate } from './helpers/checkDate';
 
 class DateRange extends React.Component {
   render() {
-    const {
-      onChange, value: {
-        start, end
-      },
-      id, fields
-    } = this.props;
+    const { onChange, value: { start, end }, ...rest } = this.props;
     const valueDate = start && end ? [moment(start), moment(end)] : null;
     return (
       <DatePicker.RangePicker
@@ -22,8 +17,7 @@ class DateRange extends React.Component {
           margin: 2,
           width: 338
         }}
-        id={id}
-        name={fields}
+        {...rest}
       />
     );
   }

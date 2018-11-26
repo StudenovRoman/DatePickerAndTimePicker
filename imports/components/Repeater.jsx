@@ -14,7 +14,6 @@ class Repeater extends React.Component {
     this.handleChangeText = this.handleChangeText.bind(this);
     this.checkText = this.checkText.bind(this);
     this.closeAndClear = this.closeAndClear.bind(this);
-    this.onChangeCheckBox = this.onChangeCheckBox.bind(this);
   }
 
   addAnother() {
@@ -42,20 +41,15 @@ class Repeater extends React.Component {
     this.setState({ text: '', add: false });
   }
 
-  onChangeCheckBox(val) {
-    const { onChange } = this.props;
-    onChange(val);
-  }
-
   render() {
-    const { list, id } = this.props;
+    const { list, onChange, ...rest } = this.props;
     const { add } = this.state;
     const options = list.map(e => ({ label: e, value: e }));
     return (
-      <section id={id}>
+      <section>
         <Checkbox.Group
           options={options}
-          onChange={val => this.onChangeCheckBox(val)}
+          onChange={val => onChange(val)}
           style={{
             display: 'flex',
             flexDirection: 'column',

@@ -11,16 +11,11 @@ import { checkStart, checkEnd } from './helpers/checkTime';
 
 class TimeRange extends React.Component {
   render() {
-    const {
-      onChange, value: {
-        start, end
-      },
-      id, fields
-    } = this.props;
+    const { onChange, value: { start, end }, ...rest } = this.props;
     const valueStart = start ? moment(start, 'HH:mm:ss') : null;
     const valueEnd = end ? moment(end, 'HH:mm:ss') : null;
     return (
-      <section id={id}>
+      <section>
         <TimePicker
           value={valueStart}
           onChange={time => checkStart(onChange, time, end)}
@@ -31,7 +26,7 @@ class TimeRange extends React.Component {
             width: 167,
             margin: 2
           }}
-          name={fields[0]}
+          {...rest}
         />
         <TimePicker
           value={valueEnd}
@@ -43,7 +38,7 @@ class TimeRange extends React.Component {
             width: 167,
             margin: 2
           }}
-          name={fields[1]}
+          {...rest}
         />
       </section>
     );
