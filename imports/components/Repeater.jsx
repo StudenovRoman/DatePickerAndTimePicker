@@ -33,7 +33,8 @@ class Repeater extends React.Component {
 
   checkText() {
     const { text } = this.state;
-    if (text) return false;
+    const { list } = this.props;
+    if (!list.includes(text) && text) return false;
     return true;
   }
 
